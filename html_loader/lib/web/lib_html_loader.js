@@ -13,7 +13,7 @@ var LibHtmlLoader = {
     },
 
     HtmlLoaderLibrary_SetText: function (value) {
-        Loader.setText(value);
+        Loader.setText(UTF8ToString(value));
     },
 
     HtmlLoaderLibrary_SetProgress: function (value) {
