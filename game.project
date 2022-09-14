@@ -1,0 +1,24 @@
+[bootstrap]
+main_collection = /example/example.collectionc
+
+[script]
+shared_state = 1
+
+[display]
+width = 960
+height = 640
+
+[project]
+title = HtmlLoader
+version = 1.0.0
+
+[library]
+include_dirs = html_loader
+
+[html5]
+htmlfile = /builtins/manifests/web/engine_template.html
+show_fullscreen_button = 0
+show_made_with_defold = 0
+show_console_banner = 0
+scale_mode = stretch
+

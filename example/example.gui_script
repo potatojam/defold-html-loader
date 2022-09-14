@@ -1,0 +1,15 @@
+function init(self)
+    if html_loader then
+        html_loader.show()
+
+        self.percent = 0
+        timer.delay(0.2, true, function(self, handle, time_elapsed)
+            self.percent = self.percent + 1
+            html_loader.set_progress(self.percent)
+            if self.percent == 100 then
+                timer.cancel(handle)
+                html_loader.hide()
+            end
+        end)  
+    end
+end
