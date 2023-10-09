@@ -12,10 +12,22 @@
         .loader {
             font-size: 2.5vh; /* Loader size */
             text-indent: -9999em;
-            border-top: 1.1em solid rgba(1, 1, 255, 0.2);
-            border-right: 1.1em solid rgba(1, 1, 255, 0.2);
-            border-bottom: 1.1em solid rgba(1, 1, 255, 0.2);
-            border-left: 1.1em solid #1a72eb;
+            {{#html_loader.loader_additional_color}}
+                border-top: 1.1em solid {{html_loader.loader_additional_color}};
+                border-right: 1.1em solid {{html_loader.loader_additional_color}};
+                border-bottom: 1.1em solid {{html_loader.loader_additional_color}};
+            {{/html_loader.loader_additional_color}}
+            {{^html_loader.loader_additional_color}}
+                border-top: 1.1em solid rgba(1, 1, 255, 0.2);
+                border-right: 1.1em solid rgba(1, 1, 255, 0.2);
+                border-bottom: 1.1em solid rgba(1, 1, 255, 0.2);
+            {{/html_loader.loader_additional_color}}
+            {{#html_loader.loader_main_color}}
+                border-left: 1.1em solid {{html_loader.loader_main_color}};
+            {{/html_loader.loader_main_color}}
+            {{^html_loader.loader_main_color}}
+                border-left: 1.1em solid #1a72eb;
+            {{/html_loader.loader_main_color}}
             -webkit-transform: translateZ(0);
             -ms-transform: translateZ(0);
             transform: translateZ(0);
@@ -53,10 +65,20 @@
         }
 
         .center_text {
-            color: #1a72eb;
+            {{#html_loader.loader_main_color}}
+                color: {{html_loader.loader_main_color}};
+            {{/html_loader.loader_main_color}}
+            {{^html_loader.loader_main_color}}
+                color: #1a72eb;
+            {{/html_loader.loader_main_color}}
             min-width: 7em;
             border-radius: 50%;
-            background-color: white;
+            {{#html_loader.loader_frame_color}}
+                background-color: {{html_loader.loader_frame_color}};
+            {{/html_loader.loader_frame_color}}
+            {{^html_loader.loader_frame_color}}
+                background-color: white;
+            {{/html_loader.loader_frame_color}}
             text-align: center;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             font-size: 3.5vh;
@@ -76,7 +98,12 @@
         }
 
         .min_text {
-            color: #1a72eb;
+            {{#html_loader.loader_main_color}}
+                color: {{html_loader.loader_main_color}};
+            {{/html_loader.loader_main_color}}
+            {{^html_loader.loader_main_color}}
+                color: #1a72eb;
+            {{/html_loader.loader_main_color}}
             text-align: center;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             font-size: 2vh;
@@ -99,8 +126,25 @@
         }
 
         .canvas-app-canvas {
-            background-size: auto 100%;
+            {{#html_loader.background_color}}
+                background-color: {{html_loader.background_color}};
+            {{/html_loader.background_color}}
+            {{#html_loader.background_size}}
+		        background-size: {{html_loader.background_size}};
+            {{/html_loader.background_size}}
         }
+
+        {{#html_loader.loader_main_color}}
+        .canvas-app-progress-bar {
+            background-color: {{html_loader.loader_main_color}};
+	    }
+        {{/html_loader.loader_main_color}}
+
+        {{#html_loader.loader_additional_color}}
+        .canvas-app-progress {
+            background-color: {{html_loader.loader_additional_color}};
+	    }
+        {{/html_loader.loader_additional_color}}
     </style>
     <script>
         (function (d) {

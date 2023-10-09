@@ -22,3 +22,9 @@ show_made_with_defold = 0
 show_console_banner = 0
 scale_mode = stretch
 
+[html_loader]
+background_size = 80%
+background_color = rgba(255,255,255,1)
+loader_main_color = rgba(26, 114, 235, 1)
+loader_additional_color = rgba(26, 114, 235, 0.2)
+loader_frame_color = rgba(255, 255, 255, 1)
