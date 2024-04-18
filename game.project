@@ -10,7 +10,7 @@ height = 640
 
 [project]
 title = HtmlLoader
-version = 1.0.0
+version = 1.1.0
 
 [library]
 include_dirs = html_loader
@@ -28,3 +28,4 @@ background_color = rgba(255,255,255,1)
 loader_main_color = rgba(26, 114, 235, 1)
 loader_additional_color = rgba(26, 114, 235, 0.2)
 loader_frame_color = rgba(255, 255, 255, 1)
+

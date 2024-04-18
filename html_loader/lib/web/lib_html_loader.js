@@ -22,4 +22,4 @@ var LibHtmlLoader = {
 }
 
 autoAddDeps(LibHtmlLoader, '$HtmlLoaderLibrary');
-mergeInto(LibraryManager.library, LibHtmlLoader);
+addToLibrary(LibHtmlLoader);
