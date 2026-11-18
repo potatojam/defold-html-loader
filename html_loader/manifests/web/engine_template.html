@@ -2,6 +2,25 @@
 
 <head>
     <style>
+        {{#DEFOLD_SCALE_MODE_IS_STRETCH}}
+        {{#html_loader.fix_canvas_bottom_gap}}
+        {{^html5.show_fullscreen_button}}
+        {{^html5.show_made_with_defold}}
+        /* Keep the canvas display size independent of the rounded render buffer. */
+        #canvas-container {
+            height: 100%;
+        }
+
+        #canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        {{/html5.show_made_with_defold}}
+        {{/html5.show_fullscreen_button}}
+        {{/html_loader.fix_canvas_bottom_gap}}
+        {{/DEFOLD_SCALE_MODE_IS_STRETCH}}
+
         .loader,
         .loader:after {
             border-radius: 50%;
